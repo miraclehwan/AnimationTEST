@@ -15,19 +15,29 @@ public class MainActivity extends GVRActivity {
 
 
 
-    Main main;
+    TestMain main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-            main = new Main();
+            main = new TestMain();
             setMain(main);
 
 
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        main.onPause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        main.onResume();
+    }
 }
